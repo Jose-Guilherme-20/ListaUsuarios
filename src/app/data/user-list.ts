@@ -1,0 +1,73 @@
+import { IUser } from '../interfaces/User/user.interface';
+
+export const UserList: IUser[] = [
+  {
+    nome: 'Ana Silva',
+    email: 'ana.silva@example.com',
+    idade: 28,
+    endereco: {
+      rua: 'Rua das Flores, 123',
+      numero: 123,
+      cidade: 'São Paulo',
+      estado: 'SP',
+      cep: '01234-567',
+      pais: 'Brasil',
+    },
+    telefone: '11912345678',
+    profissao: 'Designer Gráfico',
+    ativo: true,
+    dataCadastro: '2023-11-15T10:30:00Z',
+    status: {
+      online: true,
+      verificado: true,
+      assinaturaAtiva: true,
+      ultimoAcesso: '2024-06-10T14:45:00Z',
+    },
+  },
+  {
+    nome: 'Bruno Costa',
+    email: 'bruno.costa@example.com',
+    idade: 32,
+    endereco: {
+      rua: 'Avenida Paulista, 456',
+      numero: 456,
+      cidade: 'São Paulo',
+      estado: 'SP',
+      cep: '01310-100',
+      pais: 'Brasil',
+    },
+    telefone: '11987654321',
+    profissao: 'Desenvolvedor Full Stack',
+    ativo: true,
+    dataCadastro: '2023-12-05T09:15:00Z',
+    status: {
+      online: false,
+      verificado: true,
+      assinaturaAtiva: true,
+      ultimoAcesso: '2024-06-10T14:45:00Z',
+    },
+  },
+  {
+    nome: 'Carla Mendes',
+    email: 'carla.mendes@example.com',
+    idade: 29,
+    endereco: {
+      rua: 'Rua da Consolação, 789',
+      numero: 789,
+      cidade: 'São Paulo',
+      estado: 'SP',
+      cep: '01302-000',
+      pais: 'Brasil',
+    },
+    telefone: '11998765432',
+    profissao: 'Analista de Dados',
+    ativo: true,
+    dataCadastro: '2024-01-20T11:20:00Z',
+    status: {
+      online: true,
+      verificado: true,
+      assinaturaAtiva: true,
+      ultimoAcesso: '2024-06-10T14:45:00Z',
+    },
+  },
+];
