@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="left-container">
+    <div class="top-div">
+      <app-filter (filterAppliedEmmit)="OnFilter($event)"></app-filter>
+    </div>
+    <div class="main-left-div">
+      <app-user-list
+        [users]="userList"
+        (userSelected)="userSelected($event)"
+      ></app-user-list>
+    </div>
+  </div>
+
+  <div class="right-div">
+    <app-user-details
+      [user]="selectedUser"
+      *ngIf="showUserDetails"
+    ></app-user-details>
+  </div>
+</div>
