@@ -11,7 +11,7 @@ export class FilterComponent {
     name: '',
     startDate: undefined,
     endDate: undefined,
-    status: 'all',
+    status: 0,
   };
 
   @Output() filterAppliedEmmit = new EventEmitter<IUserFilter>();
@@ -22,8 +22,8 @@ export class FilterComponent {
   }
 
   statusList = [
-    { value: 'all', viewValue: 'All' },
-    { value: 'active', viewValue: 'Active' },
-    { value: 'inactive', viewValue: 'Inactive' },
+    { value: 0, viewValue: 'Todos' },
+    { value: true, viewValue: 'Ativo' },
+    { value: false, viewValue: 'Inativo' },
   ];
 }
