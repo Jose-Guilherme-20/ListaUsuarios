@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/User/user.interface';
-import { set } from 'date-fns';
 import { UserList } from './data/user-list';
 import { IUserFilter } from './interfaces/user-filter.interface';
 

@@ -3,6 +3,9 @@
     <div class="top-div">
       <app-filter (filterAppliedEmmit)="OnFilter($event)"></app-filter>
     </div>
+    <div class="bottom-add-user">
+      <app-user-add-button></app-user-add-button>
+    </div>
     <div class="main-left-div">
       <app-user-list
         [users]="userListFiltered"
