@@ -81,4 +81,16 @@ export class AppComponent implements OnInit {
       error: (err) => console.error(err),
     });
   }
+
+  addUser(newUser: IUser): void {
+    console.log('new user', newUser);
+    this.userService.create(newUser).subscribe({
+      next: (createdUser) => {
+        console.log('Usuário criado:', createdUser);
+        this.userList = [...this.userList, createdUser];
+        this.userListFiltered = [...this.userListFiltered, createdUser];
+      },
+      error: (err) => console.error('Erro ao criar usuário:', err),
+    });
+  }
 }

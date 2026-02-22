@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserAddComponent } from '../user-add/user-add.component';
+import { IUser } from 'src/app/interfaces/User/user.interface';
 @Component({
   selector: 'app-user-add-button',
   templateUrl: './user-add-button.component.html',
@@ -8,6 +9,8 @@ import { UserAddComponent } from '../user-add/user-add.component';
 })
 export class UserAddButtonComponent {
   constructor(public dialog: MatDialog) {}
+
+  @Output() userAdded = new EventEmitter<IUser>();
 
   openAddUserDialog() {
     const dialogRef = this.dialog.open(UserAddComponent, {
@@ -18,7 +21,7 @@ export class UserAddButtonComponent {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         console.log('Usuário criado:', result);
-        // aqui você chama sua API
+        this.userAdded.emit(result);
       }
     });
   }

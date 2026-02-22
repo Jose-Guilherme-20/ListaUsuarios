@@ -4,7 +4,7 @@
       <app-filter (filterAppliedEmmit)="OnFilter($event)"></app-filter>
     </div>
     <div class="bottom-add-user">
-      <app-user-add-button></app-user-add-button>
+      <app-user-add-button (userAdded)="addUser($event)"></app-user-add-button>
     </div>
     <div class="main-left-div">
       <app-user-list

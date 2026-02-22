@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { IUser } from 'src/app/interfaces/User/user.interface';
 
 @Component({
   selector: 'app-user-add',
@@ -20,21 +21,22 @@ export class UserAddComponent {
       idade: [null, Validators.required],
       telefone: ['', Validators.required],
       profissao: ['', Validators.required],
-      ativo: [true],
 
       endereco: this.fb.group({
         rua: ['', Validators.required],
-        numero: [null, Validators.required],
+        numero: ['', Validators.required],
         cidade: ['', Validators.required],
+        bairro: ['', Validators.required],
+        complemento: [''],
         estado: ['', Validators.required],
         cep: ['', Validators.required],
         pais: ['Brasil', Validators.required],
       }),
     });
   }
+
   salvar() {
     if (this.form.invalid) return;
-
     this.dialogRef.close(this.form.value);
   }
 
