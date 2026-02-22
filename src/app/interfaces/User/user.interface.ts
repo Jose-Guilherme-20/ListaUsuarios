@@ -10,5 +10,5 @@ export interface IUser {
   profissao: string;
   ativo: boolean;
   dataCadastro: string;
-  status: IStatus;
+  // status: IStatus;
 }

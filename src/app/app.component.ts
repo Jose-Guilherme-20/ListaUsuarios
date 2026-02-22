@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/User/user.interface';
 import { UserList } from './data/user-list';
+import { UsersService } from './data/users.service';
 import { IUserFilter } from './interfaces/user-filter.interface';
 
 @Component({
@@ -15,11 +16,10 @@ export class AppComponent implements OnInit {
   selectedUser: IUser = {} as IUser;
   showUserDetails: boolean = false;
 
+  constructor(private userService: UsersService) {}
+
   ngOnInit(): void {
-    setTimeout(() => {
-      this.userList = UserList;
-      this.userListFiltered = this.userList;
-    }, 1000);
+    this.loadUsers();
   }
 
   userSelected(user: IUser): void {
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
   ): IUser[] {
     if (status === undefined || status === null || status === 0)
       return userList;
-    return userList.filter((user) => user.status.assinaturaAtiva === status);
+    return userList.filter((user) => user.ativo === status);
   }
   userListFilterByDate(
     filteredList: IUser[],
@@ -73,5 +73,12 @@ export class AppComponent implements OnInit {
     return userList.filter((user) =>
       user.nome.toLowerCase().includes(nome.toLowerCase()),
     );
+  }
+
+  loadUsers(): void {
+    this.userService.getAll().subscribe({
+      next: (data) => ((this.userList = data), (this.userListFiltered = data)),
+      error: (err) => console.error(err),
+    });
   }
 }

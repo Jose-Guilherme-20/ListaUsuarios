@@ -17,12 +17,6 @@ export const UserList: IUser[] = [
     profissao: 'Designer Gráfico',
     ativo: true,
     dataCadastro: '2023-11-15T10:30:00Z',
-    status: {
-      online: true,
-      verificado: true,
-      assinaturaAtiva: true,
-      ultimoAcesso: '2024-06-10T14:45:00Z',
-    },
   },
   {
     nome: 'Bruno Costa',
@@ -40,12 +34,6 @@ export const UserList: IUser[] = [
     profissao: 'Desenvolvedor Full Stack',
     ativo: true,
     dataCadastro: '2023-12-05T09:15:00Z',
-    status: {
-      online: false,
-      verificado: true,
-      assinaturaAtiva: true,
-      ultimoAcesso: '2024-06-10T14:45:00Z',
-    },
   },
   {
     nome: 'Carla Mendes',
@@ -63,11 +51,5 @@ export const UserList: IUser[] = [
     profissao: 'Analista de Dados',
     ativo: true,
     dataCadastro: '2024-01-20T11:20:00Z',
-    status: {
-      online: true,
-      verificado: true,
-      assinaturaAtiva: true,
-      ultimoAcesso: '2024-06-10T14:45:00Z',
-    },
   },
 ];
